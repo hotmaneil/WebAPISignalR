@@ -31,5 +31,18 @@ namespace WebAPISignalR.Controllers
 			hub.Clients.All.ReceiveMsg(MessageListModel.Messages);
 			return Ok();
 		}
+
+		/// <summary>
+		/// 顯示單一訊息
+		/// </summary>
+		/// <param name="model"></param>
+		/// <returns></returns>
+		[HttpPost]
+		[Route("ShowSingleMessage")]
+		public IHttpActionResult ShowSingleMessage(MessageModel model)
+		{
+			hub.Clients.All.SingleMessage(model.Message);
+			return Ok();
+		}
 	}
 }
