@@ -16,14 +16,19 @@ namespace WebAPISignalR.Controllers
     {
 		IHubContext hub = GlobalHost.ConnectionManager.GetHubContext<BroadcastHub>();
 		
+		/// <summary>
+		/// 取得廣播訊息
+		/// </summary>
+		/// <param name="model"></param>
+		/// <returns></returns>
 		[HttpPost]
 		[Route("Get")]
-		public IHttpActionResult Get(MsgModel model)
+		public IHttpActionResult Get(MessageModel model)
 		{
-			MessageModel.Add(model.message);
+			MessageListModel.AddMessage(model.Message);
 
 			//新增完成去觸發signlar，以通知client更新
-			hub.Clients.All.ReceiveMsg(MessageModel.Messages);
+			hub.Clients.All.ReceiveMsg(MessageListModel.Messages);
 			return Ok();
 		}
 	}

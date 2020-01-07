@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
+﻿using System.Configuration;
 using System.Web.Http;
 using System.Web.Http.Cors;
 
@@ -9,6 +6,10 @@ namespace WebAPISignalR
 {
 	public static class WebApiConfig
 	{
+		/// <summary>
+		/// 註冊 
+		/// </summary>
+		/// <param name="config"></param>
 		public static void Register(HttpConfiguration config)
 		{
 			var domainname = ConfigurationManager.AppSettings["domainname"] + ",http://localhost:8080/";
