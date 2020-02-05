@@ -183,14 +183,15 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="AuthenticatedConnection .cs" />
     <Compile Include="Controllers\BroadcastController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PollController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="HubClass\BroadcastHub.cs" />
+    <Compile Include="HubClass\PollHub.cs" />
     <Compile Include="Models\MessageModel.cs" />
     <Compile Include="Models\MessageListModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -280,6 +281,20 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ServiceImpletment\ServiceImpletment.csproj">
+      <Project>{2e354399-74de-4c7d-8a63-ed2200eb5e88}</Project>
+      <Name>ServiceImpletment</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServiceInterface\ServiceInterface.csproj">
+      <Project>{fcbe0839-5dd1-4000-b774-a420f77dea28}</Project>
+      <Name>ServiceInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewModel\ViewModel.csproj">
+      <Project>{be1f32d8-a2b3-4630-a640-2be3d84df817}</Project>
+      <Name>ViewModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
