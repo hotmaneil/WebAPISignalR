@@ -17,6 +17,7 @@ namespace WebAPISignalR
 		/// <param name="app"></param>
 		public void Configuration(IAppBuilder app)
 		{
+			//SignalR
 			var hubConfiguration = new HubConfiguration();
 			app.Map("/signalr", map =>
 			{
@@ -26,6 +27,9 @@ namespace WebAPISignalR
 				map.RunSignalR(hubConfiguration);
 			});
 			app.MapSignalR(hubConfiguration);
+
+			//全域
+			app.UseCors(CorsOptions.AllowAll);
 		}
 	}
 }

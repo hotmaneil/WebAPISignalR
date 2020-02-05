@@ -12,7 +12,7 @@ namespace WebAPISignalR
 		/// <param name="config"></param>
 		public static void Register(HttpConfiguration config)
 		{
-			var domainname = ConfigurationManager.AppSettings["domainname"] + ",http://localhost:8080/";
+			var domainname = ConfigurationManager.AppSettings["domainname"];// + ",http://localhost:8080/";
 			var corsAttr = new EnableCorsAttribute(domainname, "*", "*");
 			config.EnableCors();
 

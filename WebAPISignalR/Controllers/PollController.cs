@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using System.Web.Http.Cors;
 using System.Web.Http.Description;
 using System.Web.Http.Results;
 using ViewModel;
@@ -16,7 +15,6 @@ namespace WebAPISignalR.Controllers
 	/// <summary>
 	/// 投票 ApiController
 	/// </summary>
-	[EnableCors(origins: "*", headers: "*", methods: "*")]
 	[RoutePrefix("api/Poll")]
 	public class PollController : ApiController
     {
